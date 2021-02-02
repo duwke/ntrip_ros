@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<launch>
+	<arg name="ntrip_stream" default="mturf" />
+	<arg name="latitude" default="29.5" />
+	<arg name="longitude" default="-95.0" />
+	<arg name="altitude" default="10" />
+  <!-- Start RobotCommander node -->
+  <node pkg="ntrip_ros" type="ntripclient.py" name="ntripclient" output="screen" >
+    <param name="ntrip_server" value="rtk2go.com" />
+    <param name="ntrip_stream" value="$(arg ntrip_stream)" />
+    <param name="latitude" value="$(arg 29.5)" />
+    <param name="longitude" value="$(arg -95.0)" />
+    <param name="altitude" value="$(arg 10)" />
+  </node>
+</launch>
